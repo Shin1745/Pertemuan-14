@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery01</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>Judul Konten</h3>
+    <p></p>
+    <div id="isikontenid">Isi Dari Konten ID</div>
+    <div id="nama"></div>
+    <div class="isikontencls">Isi Dari Konten Class</div>
+
+    <script>
+        $(function(){
+            $("#isikontenid").html("Konten dengan jQuery pada element ID");
+            $(".isikontencls").html("Konten dengan jQuery pada element CLASS");
+            $("h3").html("Latihan jQuery");
+            $("#nama").html("Arthur");
+            $("p").html("The King Of Camelot");
+    
+        });
+    </script>
+</body>
+</html>

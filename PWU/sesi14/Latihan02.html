@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery02</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form>
+    <h3>Judul Form</h3>
+    <div class="navigasi">
+    <button type="button" class="persegi">Hitung Luas Persegi</button>
+    <button type="button" class="segi3">Hitung Luas Segitiga</button>
+</div>
+<div id="hitungluaspersegi">
+<div>
+    Nilai Panjang
+    <input type="number" class="PJ">
+</div>
+<div>
+    Nilai Lebar
+    <input type="number" class="LB">
+</div>
+<div>
+    <button type="button" class="persegi">Hitung Luas</button>
+</div>
+</div>
+<div id="hitungluassegi3">
+<div>
+    Nilai Alas
+    <input type="number" class="AL">
+</div>
+<div>
+    Nilai Tinggi
+    <input type="number" class="TG">
+</div>
+<div>
+    <button type="button" class="segi3">Hitung Luas</button>
+</div>
+</div>
+<div id="hasil">Hasilnya</div>
+</div>
+</form>
+<script>
+    $(function(){
+        $("#hasil").hide();
+        $("#hitungluassegi3").hide();
+        $("#hitungluaspersegi").hide();
+        let judul = "Klik Tombol";
+        $("h3").html(judul);
+        $(".persegi").click(function(){
+            $("#hitungluassegi3").hide(500);
+            $("#hitungluaspersegi").show(500);
+            judul = "Hitung Luas Persegi";
+            $("h3").html(judul);
+        });
+        $(".segi3").click(function(){
+            $("#hitungluaspersegi").hide(500);
+            $("#hitungluassegi3").show(500);
+            judul = "Hitung Luas Segitiga";
+            $("h3").html(judul);
+        });
+        $(".persegi").click(function(){
+            let P = $(".PJ").val();
+            let L = $(".LB").val();
+            let hasil = (P * L);
+            let LU =- P*L;
+            let tx = "Hasil :<br>Hitung Nilai Panjang"+P+"dan Lebar"+L;
+            tx += "adalah:<br>Luas = Panjang X Lebar "
+            tx += "= "+P+" X "+L+"<br>";
+            tx += "= "+ LU+"<br>Jadi Luasnya Adalah "
+
+            $("#hasil").html(tx);
+            $("#hasil").show(1500);
+        })
+    });
+</script>
+</body>
+</html>
